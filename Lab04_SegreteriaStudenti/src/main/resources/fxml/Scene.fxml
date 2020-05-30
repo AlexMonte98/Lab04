@@ -60,6 +60,11 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </TextField>
+                  <Button fx:id="btnCompleta" mnemonicParsing="false" onAction="#doCompleta" text="Completa">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
                   <TextField fx:id="txtNome" disable="true" editable="false">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

@@ -15,8 +15,13 @@ public class Model {
 		for(Corso c:this.corsodao.getTuttiICorsi()) {
 			temp.add(c.getNome());
 		}
+		String s=" ";
+		temp.add(s);
 		Collections.sort(temp);
 		return temp;
+		
+	}
+	public void riempimentoAutomatico(int matricola) {
 		
 	}
 

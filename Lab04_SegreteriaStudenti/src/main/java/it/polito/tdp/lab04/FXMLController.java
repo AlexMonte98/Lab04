@@ -60,9 +60,16 @@ public class FXMLController {
     void doCercaIscritti(ActionEvent event) {
 
     }
+    @FXML
+    private Button btnCompleta;
 
     @FXML
     void doIscrivi(ActionEvent event) {
+
+    }
+    @FXML
+    void doCompleta(ActionEvent event) {
+    	
 
     }
 
@@ -72,7 +79,7 @@ public class FXMLController {
     	this.txtMatricola.clear();
     	this.txtNome.clear();
     	this.txtResult.clear();
-    	this.btnCombo
+    	this.btnCombo.getSelectionModel().clearSelection();
 
     }
     private void setCombo() {
@@ -87,6 +94,7 @@ public class FXMLController {
     void initialize() {
         assert btnCombo != null : "fx:id=\"btnCombo\" was not injected: check your FXML file 'Scene.fxml'.";
         assert btncerca != null : "fx:id=\"btncerca\" was not injected: check your FXML file 'Scene.fxml'.";
+        assert btnCompleta != null : "fx:id=\"btnCompleta\" was not injected: check your FXML file 'Scene.fxml'.";
         assert txtMatricola != null : "fx:id=\"txtMatricola\" was not injected: check your FXML file 'Scene.fxml'.";
         assert txtNome != null : "fx:id=\"txtNome\" was not injected: check your FXML file 'Scene.fxml'.";
         assert txtCognome != null : "fx:id=\"txtCognome\" was not injected: check your FXML file 'Scene.fxml'.";
