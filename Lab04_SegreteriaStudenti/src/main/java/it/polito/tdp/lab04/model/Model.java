@@ -10,5 +10,14 @@ public class Model {
 	public List<Corso> tuttiCorsi(){
 		return this.corsodao.getTuttiICorsi();
 	}
+	public List<String>tuttiCorsiStringhe(){
+		List<String>temp=new LinkedList<>();
+		for(Corso c:this.corsodao.getTuttiICorsi()) {
+			temp.add(c.getNome());
+		}
+		Collections.sort(temp);
+		return temp;
+		
+	}
 
 }

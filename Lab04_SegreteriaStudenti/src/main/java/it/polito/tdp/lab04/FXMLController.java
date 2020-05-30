@@ -1,7 +1,9 @@
 package it.polito.tdp.lab04;
 
 import java.net.URL;
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
+import java.util.ResourceBundle;
 
 import it.polito.tdp.lab04.model.Corso;
 import it.polito.tdp.lab04.model.Model;
@@ -14,7 +16,8 @@ import javafx.scene.control.TextField;
 
 public class FXMLController {
 	Model model=new Model();
-	List<Corso>listaCorsi;
+	
+
     @FXML
     private ResourceBundle resources;
 
@@ -22,7 +25,7 @@ public class FXMLController {
     private URL location;
 
     @FXML
-    private ComboBox<Corso> btnCombo;
+    private ComboBox<String> btnCombo;
 
     @FXML
     private Button btncerca;
@@ -49,11 +52,6 @@ public class FXMLController {
     private Button btnReset;
 
     @FXML
-    void doActivate(ActionEvent event) {
-
-    }
-
-    @FXML
     void doCercaCorsi(ActionEvent event) {
 
     }
@@ -74,9 +72,16 @@ public class FXMLController {
     	this.txtMatricola.clear();
     	this.txtNome.clear();
     	this.txtResult.clear();
-    	
+    	this.btnCombo
 
     }
+    private void setCombo() {
+    	Collections.sort(this.model.tuttiCorsiStringhe());
+		this.btnCombo.getItems().addAll(this.model.tuttiCorsiStringhe());
+		
+		
+	}
+    
 
     @FXML
     void initialize() {
@@ -92,15 +97,11 @@ public class FXMLController {
 
     }
 
-	public void setModel(Model model) {
+	public void setModel(Model model2) {
 		this.model=model;
 		setCombo();
 		
 	}
 
-	private void setCombo() {
-		listaCorsi=this.model.tuttiCorsi();
-		this.btnCombo.getItems().addAll(listaCorsi);
-		
-	}
+	
 }
