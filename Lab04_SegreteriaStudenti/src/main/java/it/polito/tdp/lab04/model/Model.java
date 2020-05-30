@@ -8,13 +8,7 @@ public class Model {
 	List<Corso>listaCorsi=new LinkedList<Corso>();
 	
 	public List<Corso> tuttiCorsi(){
-		for (Corso c:corsodao.getTuttiICorsi()) {
-			if(c!=null) {
-				listaCorsi.add(new Corso(c.getCodins(),c.getCrediti(),
-						c.getNome(),c.getPd()));				
-			}			
-		}
-		return listaCorsi;		
+		return this.corsodao.getTuttiICorsi();
 	}
 
 }

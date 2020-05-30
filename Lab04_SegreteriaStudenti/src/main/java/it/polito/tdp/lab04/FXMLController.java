@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 
 public class FXMLController {
 	Model model=new Model();
-
+	List<Corso>listaCorsi;
     @FXML
     private ResourceBundle resources;
 
@@ -22,7 +22,7 @@ public class FXMLController {
     private URL location;
 
     @FXML
-    private ComboBox<?> btnCombo;
+    private ComboBox<Corso> btnCombo;
 
     @FXML
     private Button btncerca;
@@ -94,13 +94,13 @@ public class FXMLController {
 
 	public void setModel(Model model) {
 		this.model=model;
-		ArrayList<String>temp=new ArrayList<>();
-		for(Corso c: this.model.tuttiCorsi()) {
-			if(c!=null) {
-				temp.add(c.getNome());
-			}
-		}
-		this.btnCombo.getItems().add(temp);
+		setCombo();
+		
+	}
+
+	private void setCombo() {
+		listaCorsi=this.model.tuttiCorsi();
+		this.btnCombo.getItems().addAll(listaCorsi);
 		
 	}
 }

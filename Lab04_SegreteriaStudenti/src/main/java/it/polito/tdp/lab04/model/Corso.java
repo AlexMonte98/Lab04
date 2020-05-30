@@ -1,13 +1,8 @@
 package it.polito.tdp.lab04.model;
 
 public class Corso {
-	@Override
-	public String toString() {
-		//"Corso [codins=" + codins + ", numeroCrediti=" + 
-		//numeroCrediti + ", nome=" + nome + ", periodoDidattico="
-			//	+ periodoDidattico + "]";
-		return this.nome;
-	}
+	
+	
 	private String codins;
 	private int numeroCrediti;
 	private String nome;
@@ -47,5 +42,10 @@ public class Corso {
 	public void setPd(int pd) {
 		this.periodoDidattico = pd;
 	}
-
+	public String toString() {
+		//"Corso [codins=" + codins + ", numeroCrediti=" + 
+		//numeroCrediti + ", nome=" + nome + ", periodoDidattico="
+			//	+ periodoDidattico + "]";
+		return this.nome;
+	}
 }
